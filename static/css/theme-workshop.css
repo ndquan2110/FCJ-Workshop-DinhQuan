@@ -206,6 +206,11 @@ a.ui-button:active,
   color: #fff;
 }
 
+/* Hide warning notices rendered by the notice shortcode */
+div.notices.warning {
+  display: none !important;
+}
+
 .ui-widget.ui-widget-content {
   border: 1px solid #eeeeee;
 }
