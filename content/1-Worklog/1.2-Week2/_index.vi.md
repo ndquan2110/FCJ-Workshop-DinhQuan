@@ -9,20 +9,21 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Chuyển từ mô hình database cục bộ sang kiến trúc managed database trên AWS.
+* Thực hành cô lập mạng giữa web server public và database private.
+* Sử dụng tag và resource group để tổ chức tài nguyên cloud.
+* Chuẩn bị nền tảng cho các bài tự động hóa và CI/CD phía sau.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 1   | - Học Amazon RDS với ứng dụng Node.js.
-- Tạo RDS MySQL trong private subnet, cấu hình DB subnet group và kết nối từ EC2 web server.                                                                                       | 24/04/2026   | 26/04/2026      |
+| 1   | - Học Amazon RDS với ứng dụng Node.js.<br> - Tạo RDS MySQL trong private subnet, cấu hình DB subnet group và kết nối từ EC2 web server.                                                                                       | 24/04/2026   | 26/04/2026      |
 | 2   | - Áp dụng security group chaining để bảo vệ database.
 - Chỉ cho phép traffic MySQL đi từ EC2 Web App Security Group và tránh mở database ra Internet.                                         | 25/04/2026   | 26/04/2026      | [<https://cloudjourney.awsstudygroup.com/>](https://000005.awsstudygroup.com/) |
 | 3   | - Thực hành chiến lược gắn thẻ tài nguyên.
 - Tạo EC2 cho các môi trường khác nhau và quản lý tag hàng loạt qua EC2 Tags console. | 26/04/2026   | 28/04/2026      | [<https://cloudjourney.awsstudygroup.com/>](https://000027.awsstudygroup.com/) |
 | 4   | - Tạo Resource Group dựa trên tag.
-- Preview và lưu nhóm tài nguyên theo điều kiện tag của EC2 để dễ tìm kiếm và quản lý.                  | 28/04/2026   | 30/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+- Preview và lưu nhóm tài nguyên theo điều kiện tag của EC2 để dễ tìm kiếm và quản lý.                  | 28/04/2026   | 30/04/2026      | [<https://cloudjourney.awsstudygroup.com/>](https://000027.awsstudygroup.com/) |
 
 
 ### Kết quả đạt được tuần 2:

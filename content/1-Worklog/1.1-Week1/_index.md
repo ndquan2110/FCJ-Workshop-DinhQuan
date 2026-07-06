@@ -1,6 +1,6 @@
 ---
 title: "Week 1 Worklog"
-date: 2024-01-01
+date: 2026
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
@@ -8,17 +8,19 @@ pre: " <b> 1.1. </b> "
 
 ### Week 1 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand the internship roadmap and the role of AWS cloud services in practical system deployment.
+* Set up safer access with IAM users, groups, policies, roles, and billing access delegation.
+* Build foundational networking knowledge with VPC, public/private subnets, routing, security groups, and VPC endpoints.
+* Launch EC2 instances and practice basic application deployment on Linux and Windows environments.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Study IAM core concepts: root account, account ID, groups, policies, roles, and least privilege. <br> - Create an admin group/user, configure an Admin role, create an OperatorUser, and test Switch Role access.                                                                             | 22/04/2026   | 22/04/2026      | <https://000002.awsstudygroup.com/> |
+| 2   | - Study Amazon VPC and AWS Site-to-Site VPN workshop concepts.<br>Design public/private subnets, internet gateway, route tables, bastion access, and VPC endpoint access to AWS services.<br>                                              | 23/04/2026 | 23/04/2026      | <https://000003.awsstudygroup.com/> |
+| 3   | - Practice Amazon EC2 fundamentals. <br> -  Create VPC networking, launch Linux and Windows EC2 instances, configure security groups, install LAMP/Node.js, and deploy a CRUD app. | 24/04/2026 | 24/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Troubleshoot compute connectivity and cleanup.<br>- Fix timeout issues by checking Security Groups and OS firewalls, then terminate EC2/VPC resources to prevent cost leakage. <br>                            | 24/04/2026 | 24/04/2026      | <https://000004.awsstudygroup.com/> |
+
 
 
 ### Week 1 Achievements:
