@@ -15,11 +15,11 @@ pre: " <b> 1.3. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Tạo AWS Cost Budget. <br> - Cấu hình theo dõi unblended cost cho toàn bộ dịch vụ và cảnh báo nhiều mức 50%, 80%, 100%.                                              | 29/04/2026 | 29/04/2026      | <https://000007.awsstudygroup.com/> |
+| 2   | - Tạo AWS Usage Budget.<br> - Theo dõi EC2 running hours để bảo vệ Free Tier và hiểu rủi ro chi phí ngầm khi quên xóa tài nguyên.<br>                                              | 30/04/2026 | 30/04/2026      | <https://000007.awsstudygroup.com/> |
+| 3   | - Tìm hiểu RI Budget và Savings Plans Budget.<br> - So sánh giám sát mức sử dụng reservation với giám sát cam kết compute trong quản trị chi phí doanh nghiệp. | 31/04/2026 | 31/04/2026      | <https://0000042.awsstudygroup.com/> |
+| 4   | - Bắt đầu Amazon CloudWatch Workshop. <br> - Triển khai hạ tầng EC2 bằng CloudFormation và nhận diện lỗi region/vCPU quota khi tạo stack.<br>                            | 01/05/2026 | 01/05/2026      | <https://000008.awsstudygroup.com/> <https://0000036.awsstudygroup.com/>  |
+
 
 
 ### Kết quả đạt được tuần 3:
