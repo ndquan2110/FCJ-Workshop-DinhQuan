@@ -74,6 +74,34 @@ name = "<i class='fas fa-fw fa-bullhorn'></i> Crédits"
 url = "/credits"
 weight = 30
 
+[Languages.vi]
+title = "Tài liệu Hugo Learn"
+weight = 4
+languageName = "Tiếng Việt"
+languageCode = "vi-VN"
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+identifier = "ds"
+url = "https://github.com/matcornic/hugo-theme-learn"
+weight = 10
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-camera'></i> Vitrine"
+url = "/showcase"
+weight = 11
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bookmark'></i> Documentation Hugo"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 20
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 30
+
 [Languages.zh]
 title = "Hugo 主题的 Learn 文档"
 weight = 3
