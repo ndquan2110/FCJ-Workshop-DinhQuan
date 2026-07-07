@@ -17,9 +17,9 @@ pre: " <b> 1.4. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 1   | - ITriển khai kiến trúc Route 53 Resolver. <br> - Tạo on-premises VPC và AWS VPC giả lập, cấu hình VPC peering, route table, inbound/outbound endpoint và resolver rule.                                                                                                   | 01/05/2025 | 01/05/2025      | <https://000010.awsstudygroup.com/> |
+| 1   | - ITriển khai kiến trúc Route 53 Resolver. <br> - Tạo on-premises VPC và AWS VPC giả lập, cấu hình VPC peering, route table, inbound/outbound endpoint và resolver rule.                                                                                                   | 01/05/2026 | 01/05/2026      | <https://000010.awsstudygroup.com/> |
 | 2  | - Thực hành quản lý tài nguyên bằng AWS CLI.<br> -  Cài AWS CLI v2, cấu hình credential, quản lý S3/SNS/IAM và tạo VPC/EC2 bằng dòng lệnh.<br>                                              | 02/05/2026 | 02/05/2026      | <https://000011.awsstudygroup.com/> |
-| 3   | - Tạo AWS Backup plan và backup vault.<br> - Dùng tag để gán EC2 vào backup rule và cấu hình IAM/SNS permission cho thông báo backup. | 02/05/2025 | 03/05/2025      | <https://000013.awsstudygroup.com/> |
+| 3   | - Tạo AWS Backup plan và backup vault.<br> - Dùng tag để gán EC2 vào backup rule và cấu hình IAM/SNS permission cho thông báo backup. | 02/05/2026 | 03/05/2026      | <https://000013.awsstudygroup.com/> |
 | 4   | - Kiểm thử restore và quy trình cleanup.<br> - Hiểu recovery point, restore không ghi đè, idempotency token và thứ tự dọn dẹp tài nguyên liên quan đến backup.<br>                            | 03/05/2026 | 04/05/2026      | <https://000013.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 4:
