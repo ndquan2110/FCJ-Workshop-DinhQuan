@@ -11,8 +11,8 @@ Phần này bao gồm 4 bài blog liên quan đến AWS đã được dịch và
 
 ###  [Blog 1 - Hiện đại hóa KYC với các giải pháp serverless của AWS và AI agent cho dịch vụ tài chính](3.1-Blog1/)
 
-###  [Blog 2 - ...](3.2-Blog2/)
+###  [Blog 2 - Hệ Thống Tìm Kiếm Dữ Liệu JSON Hợp Nhất Trên AWS](3.2-Blog2/)
 
-###  [Blog 3 - ...](3.3-Blog3/)
+###  [Blog 3 - Amazon DynamoDB - Chọn Chế Độ Throughput Phù Hợp Cho Ứng Dụng](3.3-Blog3/)
 
-###  [Blog 4 - ...](3.4-Blog4/)
+
