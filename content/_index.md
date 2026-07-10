@@ -9,11 +9,11 @@ chapter: false
 # Internship Report
 
 ### Student Information:
-&emsp; **Full Name:** Võ Thiện Tú
+&emsp; **Full Name:** Nguyen Dinh Quan
 
-&emsp; **Phone Number:** 0522898801
+&emsp; **Phone Number:** 0865455183
 
-&emsp; **Email:** vothientu31@gmail.com
+&emsp; **Email:** nguyendinhquan.a14pbc2020@gmail.com
 
 &emsp; **University:** Ho Chi Minh City University of Technology
 

@@ -7,11 +7,11 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Võ Thiện Tú
+&emsp; **Họ và tên:** Nguyễn Đình Quân  
 
-&emsp; **Số điện thoại:** 0522898801
+&emsp; **Số điện thoại:** 0865455183
 
-&emsp; **Email:** vothientu31@gmail.com
+&emsp; **Email:** nguyendinhquan.a14pbc2020@gmail.com
 
 &emsp; **Trường:** Trường Đại học Công nghệ Thành phố Hồ Chí Minh
 
