@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# Hiện đại hóa KYC với các giải pháp serverless của AWS và AI agent cho dịch vụ tài chính
+## Hiện đại hóa KYC với các giải pháp serverless của AWS và AI agent cho dịch vụ tài chính
 
 Trong bối cảnh ngành tài chính yêu cầu tốc độ xử lý nhanh và tính bảo mật khắt khe, quy trình KYC truyền thống thường gặp trở ngại do thao tác thủ công, thời gian chờ đợi kéo dài và khả năng sai sót cao. Bài viết này trình bày cách các tổ chức tài chính có thể chuyển đổi quy trình này bằng kiến trúc Serverless kết hợp với AI Agents.
 
@@ -32,11 +32,15 @@ Trong bối cảnh ngành tài chính yêu cầu tốc độ xử lý nhanh và 
 
 Các quy trình KYC truyền thống xác minh danh tính khách hàng, đánh giá rủi ro và giám sát rửa tiền. Chúng dựa vào việc thu thập tài liệu thủ công, kiểm tra danh tính trên nhiều cơ sở dữ liệu và đánh giá định kỳ. 
 Mặc dù các quy trình đã được thiết lập này đã phục vụ ngành tài chính trong nhiều thập kỷ, nhưng chúng được thiết kế cho một kỷ nguyên khác với khối lượng giao dịch thấp hơn, các sản phẩm đơn giản hơn và bối cảnh mối đe dọa ít tinh vi hơn. Môi trường tài chính ưu tiên kỹ thuật số ngày nay đòi hỏi một sự tái hình dung cơ bản về KYC ở quy mô lớn.
+
 ---
+
 ## Kiến trúc giải pháp KYC gốc đám mây sử dụng AI tác nhân
 
 ![Kiến trúc tác nhân cấp cao cho KYC theo thời gian thực]({{ "images/3-BlogsTranslated/kientruc.png" | relURL }})
+
 ---
+
 ## Các thành phần giải pháp
 
 **Cơ sở hạ tầng giao tiếp hướng sự kiện với Amazon MSK**
@@ -53,7 +57,9 @@ Tác nhân Giám sát triển khai logic định tuyến thông minh bằng các
 - Cơ sở tri thức KYC triển khai một mẫu tạo sinh tăng cường truy xuất (RAG) để đưa ra các quyết định của tác nhân dựa trên thông tin thực tế, hiện tại thay vì chỉ dựa vào việc đào tạo foundation model. Amazon S3 lưu trữ các tài liệu nguồn, bao gồm các quy định từ các cơ quan tài chính, các quy tắc tuân thủ cụ thể của tổ chức, các chính sách nội bộ và tài liệu nhà cung cấp, được kích hoạt để theo dõi các thay đổi theo thời gian. 
 - Truy xuất nhận biết ngữ cảnh làm phong phú các truy vấn bằng thông tin cụ thể của trường hợp, bao gồm khu vực pháp lý của khách hàng, loại tài liệu và mức độ rủi ro – tạo điều kiện thuận lợi cho hướng dẫn quy định có liên quan cao.
 - Kho quyết định thời gian thực (Real-Time Decision Store) (Amazon DynamoDB) bổ sung cho Cơ sở tri thức với khả năng truy cập dưới mili giây vào dữ liệu có cấu trúc được truy cập thường xuyên, bao gồm trạng thái quyết định KYC hiện tại, điểm rủi ro, lịch sử tương tác của khách hàng và các tham số cấu hình động kiểm soát hành vi của tác nhân.
+
 ---
+
 ## Tích hợp an toàn với các hệ thống tài chính tại chỗ
 
 Kiến trúc tích hợp với các hệ thống tài chính tại chỗ thông qua Action Groups, kết nối lớp tác nhân gốc đám mây và cơ sở hạ tầng doanh nghiệp hiện có.
@@ -75,5 +81,7 @@ Giải pháp nên tích hợp các kiểm soát bảo mật đa lớp, giám sá
 Kiến trúc KYC này sử dụng các dịch vụ serverless của AWS và Amazon Bedrock để xử lý các xác thực nhanh hơn và ở quy mô lớn. Mô hình thực thi tác nhân song song được thiết kế để giảm thời gian xác thực KYC từ 3-5 ngày thông thường xuống gần thời gian thực cho các trường hợp tiêu chuẩn. Cách tiếp cận này cho phép xử lý nhanh hơn theo cấp số nhân thông qua hoạt động đồng thời của các tác nhân Phân tích tài liệu, Xác minh danh tính và Phát hiện gian lận thay vì các quy trình làm việc tuần tự.
 
 Với kiến trúc này, các tổ chức tài chính có thể xử lý các xác thực khối lượng lớn thông qua khả năng mở rộng linh hoạt, tối ưu hóa chi phí thông qua mô hình định giá trả theo mức sử dụng serverless và cải thiện độ chính xác thông qua sự cộng tác của nhiều tác nhân
+
 **Nguồn tham khảo:** <https://awsstudygroup.com/2026/05/26/hien-dai-hoa-kyc-voi-cac-giai-phap-serverless-cua-aws-va-ai-agent-cho-dich-vu-tai-chinh/>
+
 ---
