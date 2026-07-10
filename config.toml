@@ -1,4 +1,4 @@
-baseURL = "https://github.com/ndquan2110/FCJ-Workshop-DinhQuan/"
+baseURL = "https://ndquan2110.github.io/FCJ-Workshop-DinhQuan/"
 relativeURLs = true
 canonifyURLs = true
 defaultContentLanguage = "en"
