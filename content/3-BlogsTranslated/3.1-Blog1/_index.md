@@ -36,7 +36,7 @@ Although these established processes have served the financial industry for deca
 ---
 ## Cloud-Native KYC Solution Architecture Using AI Agents
 
-![High-level agent architecture for real-time KYC](/images/3-BlogsTranslated/kientruc.png)
+![High-level agent architecture for real-time KYC]({{< relURL "images/3-BlogsTranslated/kientruc.png" >}})
 
 ---
 ## Solution Components
