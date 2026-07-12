@@ -26,10 +26,10 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 8:** [Advanced IAM, CDK, database migration, and conditional access](1.8-week8/)
 
-**Week 9:** [Doing task I...](1.9-week9/)
+**Week 9:** [Exploring CloudWatch, CloudTrail, log, metric, alarm and system monitoring.](1.9-week9/)
 
-**Week 10:** [Doing task L...](1.10-week10/)
+**Week 10:** [Exploring AWS Budgets, Cost Explorer, KMS, WAF and cost optimization, system security.](1.10-week10/)
 
-**Week 11:** [Doing task M...](1.11-week11/)
+**Week 11:** [Exploring Lambda, API Gateway, Cognito, SQS, SNS and SES in the serverless model.](1.11-week11/)
 
-**Week 12:** [Doing task N...](1.12-week12/)
+**Week 12:** [Applying knowledge to the project, deploying a demo on AWS, testing, troubleshooting and finalizing the report.](1.12-week12/)

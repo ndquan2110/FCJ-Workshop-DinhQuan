@@ -27,10 +27,10 @@ Nội dung worklog bao gồm AWS identity and access management, networking, com
 
 **Tuần 8:** [ IAM nâng cao, CDK, database migration và truy cập có điều kiện](1.8-week8/)
 
-**Tuần 9:** [Quản lý sinh viên trên AWS](1.9-week9/)
+**Tuần 9:** [Tìm hiểu CloudWatch, CloudTrail, log, metric, alarm và giám sát hệ thống.](1.9-week9/)
 
-**Tuần 10:** [ Luồng nghiệp vụ HaShop: order, payment, notification và front-end](1.10-week10/)
+**Tuần 10:** [Tìm hiểu AWS Budgets, Cost Explorer, KMS, WAF và tối ưu chi phí, bảo mật hệ thống.](1.10-week10/)
 
-**Tuần 11:** [Chuẩn bị triển khai HaShop lên AWS và viết CloudFormation template](1.11-week11/)
+**Tuần 11:** [Tìm hiểu Lambda, API Gateway, Cognito, SQS, SNS và SES trong mô hình serverless.](1.11-week11/)
 
-**Tuần 12:** [Triển khai HaShop lên AWS, kiểm thử, troubleshooting và tài liệu](1.12-week12/)
+**Tuần 12:** [Tổng hợp kiến thức, triển khai demo trên AWS, kiểm thử, troubleshooting và hoàn thiện báo cáo.](1.12-week12/)
