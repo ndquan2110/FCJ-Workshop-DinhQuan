@@ -22,6 +22,5 @@ pre: " <b> 4.2. </b> "
 
 #### Được thấy các bạn FPT tham gia sự kiện hackathon
 
-
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+- Chia sẻ những kinh nghiệm kiến thức khi tham gia một cuộc thi tầm cỡ như hackathon
 

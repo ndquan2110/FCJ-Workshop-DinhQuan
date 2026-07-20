@@ -20,6 +20,5 @@ pre: " <b> 4.2. </b> "
 
 ### Inspiration from the FPT Challenger Team
 
+- Sharing knowledge and experiences when participating in a large-scale competition like a hackathon
 
-
-> Overall, this meetup went beyond delivering technical knowledge; it fundamentally reshaped my mindset toward modern application design, system modernization, and effective cross-functional collaboration.
