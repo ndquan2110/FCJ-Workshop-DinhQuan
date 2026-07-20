@@ -7,7 +7,6 @@ pre: " <b> 1.9. </b> "
 ---
 
 
-# Worklog Tuần 9
 
 ## Mục tiêu tuần 9
 

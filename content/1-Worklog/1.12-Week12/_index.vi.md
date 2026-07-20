@@ -7,7 +7,7 @@ pre: " <b> 1.12. </b> "
 ---
 
 
-# Worklog Tuần 12
+
 
 ## Mục tiêu tuần 12
 

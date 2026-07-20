@@ -7,7 +7,6 @@ pre: " <b> 1.12. </b> "
 ---
 
 
-
 ## Week 12 Objectives
 
 In week 12, the main goal was to apply the AWS knowledge learned to the project implementation process. The content focuses on analyzing system requirements, selecting appropriate AWS services, designing the overall architecture, and deploying the main components of the project on the AWS environment.

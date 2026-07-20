@@ -7,7 +7,7 @@ pre: " <b> 1.10. </b> "
 ---
 
 
-# Week 10 Worklog
+
 
 ## Week 10 Objectives
 
