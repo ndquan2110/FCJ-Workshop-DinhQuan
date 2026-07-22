@@ -11,7 +11,7 @@ During my internship, I participated in two events. Each event was a memorable e
 ### [Event 1](4.1-Event1/)
 &emsp;**Event Name:** FCAJ MeetUp
 
-&emsp;**Date & Time:** 09:00, May 13, 2026
+&emsp;**Date & Time:** 09:00, 13/05/2026
 
 &emsp;**Organizer:** First Cloud AI Journey Community
 
@@ -24,7 +24,7 @@ During my internship, I participated in two events. Each event was a memorable e
 ### [Event 2](4.2-Event2/)
 &emsp;**Event Name:** FCAJ MeetUp
 
-&emsp;**Date & Time:** 09:00, May 30, 2026
+&emsp;**Date & Time:** 09:00 , 11/07/2026
 
 &emsp;**Organizer:** First Cloud AI Journey Community
 

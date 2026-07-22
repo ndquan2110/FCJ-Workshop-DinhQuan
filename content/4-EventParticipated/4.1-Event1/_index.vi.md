@@ -58,5 +58,5 @@ Giải pháp cấu trúc hóa: Bài viết đưa ra công thức chuẩn để t
 
 #### Một số hình ảnh khi tham gia sự kiện
 * Em không có lưu về máy ạ
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp em thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+
 
