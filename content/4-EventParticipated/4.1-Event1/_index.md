@@ -59,4 +59,3 @@ The core academic focus centered on methodologies that stimulate the reasoning c
 #### Event Gallery
 * No images available to display.
 
-> Overall, the event not only provided deep technical insights but also reshaped my mindset regarding modern application design, cloud native systems, and effective cross-functional team collaboration.
