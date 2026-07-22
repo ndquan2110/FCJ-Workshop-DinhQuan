@@ -8,16 +8,12 @@ pre: " <b> 4.2. </b> "
 
 # Report on “Event Meetup”
 
-### Event Purpose
 
-- Share effective learning methodologies and student insights.
-- Introduce the upcoming hackathon competition.
-
-#### List of Speakers
+### List of Speakers
 Nguyễn Huỳnh Sơn
 Ngô Lê Tấn Huy
 Nguyễn Tuấn Thịnh – DevOps/Cloud Engineer
-#### Key Topics
+### Key Topics
 
 #### SLA and Monitoring
 
@@ -37,7 +33,7 @@ Speaker: **Nguyễn Tuấn Thịnh**
 
 In the seminar "Securing Your Web Apps with AWS Security Agent," Mr. Nguyễn Tuấn Thịnh shared practical knowledge and experience in building a comprehensive security process for web applications on AWS. The presentation focused on applying Artificial Intelligence (AI) together with AWS security services to automate vulnerability detection, risk assessment, and support developers in building more secure applications.
 
-#### Highlights
+### Highlights
 
 The three seminars focused on important topics within the Amazon Web Services (AWS) ecosystem from different perspectives.
 
@@ -47,7 +43,7 @@ Securing Your Web Apps with AWS Security Agent focused on web application securi
 
 Overall, the presentations were highly practical and helped participants improve their knowledge of Cloud Computing, system operations, cybersecurity, and career development in Information Technology.
 
-#### Knowledge Gained
+### Knowledge Gained
 
 After attending the three AWS seminars, I gained valuable knowledge about Cloud Computing, system monitoring, and application security. These sessions not only strengthened my theoretical understanding but also provided practical insights that align with current industry trends.
 
@@ -55,7 +51,7 @@ First, I developed a better understanding of Service Level Agreements (SLA) and 
 
 In addition, the AWS Cloud Practitioner session gave me a comprehensive overview of cloud computing and the AWS ecosystem. I learned about cloud service models such as IaaS, PaaS, and SaaS, as well as deployment models including Public Cloud, Private Cloud, and Hybrid Cloud. I also became familiar with core AWS services such as Amazon EC2, Amazon S3, Amazon RDS, AWS Lambda, Amazon VPC, AWS IAM, and Amazon CloudWatch, understanding their functions and common use cases. Furthermore, I gained insight into the AWS Certified Cloud Practitioner exam structure, key knowledge domains, and effective preparation strategies.
 
-#### Application to Study and Future Career
+### Application to Study and Future Career
 
 From an academic perspective, the knowledge gained from these seminars will help me better understand how to design, deploy, and operate cloud-based systems. I can apply these concepts in courses such as Cloud Computing, Software Development, DevOps, System Administration, and Information Security.
 
@@ -63,7 +59,7 @@ When working on academic or personal projects, I can utilize AWS services such a
 
 Moreover, the knowledge gained about the AWS Certified Cloud Practitioner certification provides me with a solid cloud computing foundation and a clearer learning roadmap. I plan to prepare for this certification and later pursue advanced certifications such as AWS Solutions Architect Associate, AWS Developer Associate, or AWS SysOps Administrator Associate, all of which are highly recognized in the IT industry.
 
-#### Personal Reflection
+### Personal Reflection
 
 After attending the three seminars on SLA and Monitoring, AWS Cloud Practitioner, and AWS Security Agent, I found them to be extremely informative and valuable. The presentations not only expanded my knowledge of Cloud Computing but also helped me understand how companies deploy, operate, and secure systems on AWS.
 
@@ -71,10 +67,10 @@ What impressed me the most was that the speakers shared not only theoretical con
 
 Additionally, the AWS Cloud Practitioner session motivated me to learn more about AWS services and pursue internationally recognized AWS certifications. I also realized that skills in Cloud Computing, DevOps, and Cloud Security are becoming increasingly important for IT students preparing for their future careers.
 
-#### Conclusion
+### Conclusion
 
 The seminar series helped me gain a deeper understanding of AWS Cloud Computing, system monitoring, application security (DevSecOps), and the roadmap for achieving the AWS Cloud Practitioner certification. The knowledge and practical experiences shared by the speakers have not only supported my academic learning but also helped me better define my future career goals. Overall, these seminars were highly beneficial, enhancing my technical knowledge and motivating me to continue learning, practicing, and developing my skills in Cloud Computing.
 
-#### Some Photos from the Event
+### Some Photos from the Event
 
 Unfortunately, I did not take any photos during the event. I sincerely apologize for this and appreciate your understanding.
