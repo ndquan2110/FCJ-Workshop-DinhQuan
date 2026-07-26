@@ -8,6 +8,7 @@ pre: " <b> 3.1. </b> "
 
 ## Hiện đại hóa KYC với các giải pháp serverless của AWS và AI agent cho dịch vụ tài chính
 
+## Giới thiệu
 Trong bối cảnh ngành tài chính yêu cầu tốc độ xử lý nhanh và tính bảo mật khắt khe, quy trình KYC truyền thống thường gặp trở ngại do thao tác thủ công, thời gian chờ đợi kéo dài và khả năng sai sót cao. Bài viết này trình bày cách các tổ chức tài chính có thể chuyển đổi quy trình này bằng kiến trúc Serverless kết hợp với AI Agents.
 
 ---

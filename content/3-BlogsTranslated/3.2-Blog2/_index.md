@@ -7,7 +7,7 @@ pre: " <b> 3.2. </b> "
 ---
 
 # A Unified JSON Data Search System on AWS
-**Introduction**
+## Introduction
 Modern applications such as streaming platforms, e-commerce systems, and large data products rarely store all data in a single database. Some data requires low-latency access, some requires strong transactional consistency, and other data is stored for analytics or long-term reporting.
 
 This raises an important question: how can users search across many data sources quickly and accurately?

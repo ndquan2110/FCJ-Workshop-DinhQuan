@@ -73,4 +73,4 @@ The seminar series helped me gain a deeper understanding of AWS Cloud Computing,
 
 ### Some Photos from the Event
 
-Unfortunately, I did not take any photos during the event. I sincerely apologize for this and appreciate your understanding.
+ (/images/Event2.jpg)(/images/Event2.1.jpg)

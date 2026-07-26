@@ -9,7 +9,7 @@ pre: " <b> 3.2. </b> "
 
 # Hệ Thống Tìm Kiếm Dữ Liệu JSON Hợp Nhất Trên AWS
 
-**Giới thiệu**
+## Giới thiệu
 Trong các ứng dụng hiện đại như nền tảng streaming, thương mại điện tử hoặc hệ thống dữ liệu lớn, dữ liệu thường không nằm trong một cơ sở dữ liệu duy nhất. Một phần dữ liệu cần truy xuất rất nhanh, một phần cần đảm bảo giao dịch, một phần khác lại phục vụ phân tích hoặc lưu trữ lâu dài.
 
 Điều này đặt ra câu hỏi: làm thế nào để người dùng có thể tìm kiếm dữ liệu từ nhiều nguồn khác nhau một cách nhanh chóng và chính xác?
