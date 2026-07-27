@@ -19,8 +19,8 @@ pre: " <b> 1.3. </b> "
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
 | 1   | - Tạo AWS Cost Budget. <br> - Cấu hình theo dõi unblended cost cho toàn bộ dịch vụ và cảnh báo nhiều mức 50%, 80%, 100%.                                              | 29/04/2026 | 29/04/2026      | <https://000007.awsstudygroup.com/> |
 | 2   | - Tạo AWS Usage Budget.<br> - Theo dõi EC2 running hours để bảo vệ Free Tier và hiểu rủi ro chi phí ngầm khi quên xóa tài nguyên.<br>                                              | 30/04/2026 | 30/04/2026      | <https://000007.awsstudygroup.com/> |
-| 3   | - Tìm hiểu RI Budget và Savings Plans Budget.<br> - So sánh giám sát mức sử dụng reservation với giám sát cam kết compute trong quản trị chi phí doanh nghiệp. | 31/04/2026 | 31/04/2026      | <https://0000042.awsstudygroup.com/> |
-| 4   | - Bắt đầu Amazon CloudWatch Workshop. <br> - Triển khai hạ tầng EC2 bằng CloudFormation và nhận diện lỗi region/vCPU quota khi tạo stack.<br>                            | 01/05/2026 | 01/05/2026      | <https://000008.awsstudygroup.com/> <https://0000036.awsstudygroup.com/>  |
+| 3   | - Tìm hiểu RI Budget và Savings Plans Budget.<br> - So sánh phương pháp giám sát mức độ sử dụng reservation với việc theo dõi cam kết compute trong công tác quản trị chi phí doanh nghiệp. | 31/04/2026 | 31/04/2026      | <https://0000042.awsstudygroup.com/> |
+| 4   | - Bắt đầu Amazon CloudWatch Workshop. <br> - Triển khai hạ tầng EC2 thông qua CloudFormation, đồng thời nhận diện và xử lý các lỗi giới hạn region/vCPU quota khi khởi tạo stack.<br>                            | 01/05/2026 | 01/05/2026      | <https://000008.awsstudygroup.com/> <https://0000036.awsstudygroup.com/>  |
 
 
 

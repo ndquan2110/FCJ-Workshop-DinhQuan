@@ -19,8 +19,8 @@ pre: " <b> 1.3. </b> "
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
 | 1   | - Create AWS Cost Budget. <br> - Configure all-services unblended cost monitoring and multi-level alerts at 50%, 80%, and 100% thresholds.                                                                     | 29/04/2026 | 29/04/2026      | <https://000007.awsstudygroup.com/> |
 | 2   | - Create AWS Usage Budget<br> - Track EC2 running hours to protect Free Tier limits and understand hidden cost risks from forgotten resources.<br>                                              | 30/04/2026 | 30/04/2026      | <https://000007.awsstudygroup.com/> |
-| 3   | - Study RI Budget and Savings Plans Budget.<br> - Compare reservation utilization monitoring with compute commitment monitoring for enterprise cost governance. | 31/04/2026 | 31/04/2026      | <https://0000042.awsstudygroup.com/> |
-| 4   | - Begin Amazon CloudWatch Workshop. <br> - Deploy EC2 infrastructure through CloudFormation and identify region/vCPU quota issues during stack creation.<br>                            | 01/05/2026 | 01/05/2026      | <https://000008.awsstudygroup.com/> <https://0000036.awsstudygroup.com/>  |
+| 3   | - Study RI Budget and Savings Plans Budget.<br> - Compared reservation utilization monitoring with compute commitment tracking in enterprise cost management. | 31/04/2026 | 31/04/2026      | <https://0000042.awsstudygroup.com/> |
+| 4   | - Begin Amazon CloudWatch Workshop. <br> - Deployed EC2 infrastructure using CloudFormation and identified region/vCPU quota errors during stack creation.<br>                            | 01/05/2026 | 01/05/2026      | <https://000008.awsstudygroup.com/> <https://0000036.awsstudygroup.com/>  |
 
 
 
