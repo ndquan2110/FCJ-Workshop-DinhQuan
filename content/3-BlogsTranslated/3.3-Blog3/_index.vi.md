@@ -8,7 +8,9 @@ pre: " <b> 3.3. </b> "
 
 
 # Amazon DynamoDB - Chọn Chế Độ Throughput Phù Hợp Cho Ứng Dụng
-
+- **Tác giả:** Jonathan Woods và Pengfei Shao, 
+- **Ngày phát hành:** 07 tháng 05 năm 2025
+- **Chuyên mục:** [AWS WAF](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/security-identity-compliance/aws-waf/), [Best Practices](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/post-types/best-practices/), [Security,Identity, & Compliance](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/security-identity-compliance/)
 ## Giới thiệu
 
 Trong quá trình phát triển ứng dụng trên AWS, việc lựa chọn cơ sở dữ liệu phù hợp ảnh hưởng trực tiếp đến hiệu năng, khả năng mở rộng và chi phí vận hành. Với những ứng dụng có lưu lượng lớn hoặc thay đổi liên tục như thương mại điện tử, game online hay hệ thống serverless, Amazon DynamoDB là một lựa chọn phổ biến.

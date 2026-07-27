@@ -7,7 +7,9 @@ pre: " <b> 3.3. </b> "
 ---
 
 # Amazon DynamoDB - Choosing the Right Throughput Mode for Your Application
-
+- **Authors:** Jonathan Woods và Pengfei Shao, 
+- **Date posted:** 07 tháng 05 năm 2025
+- **Categories:** [AWS WAF](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/security-identity-compliance/aws-waf/), [Best Practices](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/post-types/best-practices/), [Security,Identity, & Compliance](https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/security-identity-compliance/)
 ## Introduction
 
 When building applications on AWS, choosing the right database affects performance, scalability, and operating cost. For applications with large or unpredictable traffic, such as e-commerce, online games, and serverless APIs, Amazon DynamoDB is a common choice.
