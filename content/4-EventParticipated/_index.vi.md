@@ -11,7 +11,7 @@ Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là
 ### [Event 1](4.1-Event1/)
 &emsp;**Tên sự kiện:** FCAJ AWS MeetUp
 
-&emsp;**Thời gian:** 09:00 ngày 13/05/2026
+&emsp;**Thời gian:** 09:00 ngày 09/05/2026
 
 &emsp;**Đơn vị tổ chức:** First Cloud AI Journey Community
 

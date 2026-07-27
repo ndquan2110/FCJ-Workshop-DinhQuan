@@ -73,4 +73,5 @@ The seminar series helped me gain a deeper understanding of AWS Cloud Computing,
 
 ### Some Photos from the Event
 
-No images available to display.
+![Event](/images/4-Event/Event2.jpg)
+![Event](/images/4-Event/Event2.1.jpg)
