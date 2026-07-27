@@ -23,22 +23,11 @@ The system serves three user groups:
  Role Group         | Login Email       | Password   | Authorized Features
   --------------------|-----------------------|-------------|-----------------------
    Admin              |  admin@example.com    |  Abc12345!  | Access all features (including teacher management, logs, accounts).
-                      |                       |             | 
-                      |                       |             | 
-                      |                       |             | 
-   Teacher / Staff |  staff@example.com    |  Abc12345!  | Access Students, Grades, Learning Materials, Profiles, Notifications. (Hides Admin & Teacher settings).
-                      |                       |             | 
-                      |                       |             |
-                      |                       |             | 
-                      |                       |             | 
-                      |                       |             |
-   Student         |  student@example.com  |  Abc12345!  | Chỉ thấy menu Tổng
-                      |                       |             | Access only Overview, Personal Profile, Grade View, Learning Materials, and Notifications. (Hides all administrative modules).
-                      |                       |             |
-                      |                       |             | 
-                      |                       |             |
-                      |                       |             |
 
+   Teacher / Staff |  staff@example.com    |  Abc12345!  | Access Students, Grades, Learning Materials, Profiles, Notifications. (Hides Admin & Teacher settings).
+   
+   Student         |  student@example.com  |  Abc12345!  | Access only Overview, Personal Profile, Grade View, Learning Materials, and Notifications. (Hides all administrative modules).
+ 
 ---
 ### System Architecture
 
