@@ -16,7 +16,30 @@ The system serves three user groups:
 * **Student**: Views personal profile, queries grade reports, and accesses learning materials posted by teachers.
 
 ---
+### Overview
+#### Live Product URL & Demo Accounts
+* **Live Web Product URL (CloudFront CDN):**[https://d3th0yl82lu593.cloudfront.net/]
+#### Danh sách tài khoản thử nghiệm theo nhóm quyền:
+ Role Group         | Login Email       | Password   | Authorized Features
+  --------------------|-----------------------|-------------|-----------------------
+   Admin              |  admin@example.com    |  Abc12345!  | Access all features (including teacher management, logs, accounts).
+                      |                       |             | 
+                      |                       |             | 
+                      |                       |             | 
+   Teacher / Staff |  staff@example.com    |  Abc12345!  | Access Students, Grades, Learning Materials, Profiles, Notifications. (Hides Admin & Teacher settings).
+                      |                       |             | 
+                      |                       |             |
+                      |                       |             | 
+                      |                       |             | 
+                      |                       |             |
+   Student         |  student@example.com  |  Abc12345!  | Chỉ thấy menu Tổng
+                      |                       |             | Access only Overview, Personal Profile, Grade View, Learning Materials, and Notifications. (Hides all administrative modules).
+                      |                       |             |
+                      |                       |             | 
+                      |                       |             |
+                      |                       |             |
 
+---
 ### System Architecture
 
 The application is designed using a Serverless model to eliminate server management overhead (no EC2), scale automatically under load, and minimize costs.
