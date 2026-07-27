@@ -60,7 +60,7 @@ The core academic focus centered on methodologies that stimulate the reasoning c
 ![Event](/images/4-Event/Event1.jpg)
 
 
-![Event](/images/4-Event/Event1.1.jpg)
+![Event](/images/4-Event/Even1.1.jpg)
 
 
-![Event](/images/4-Event/Event1.2.jpg)
+![Event](/images/4-Event/Even1.2.jpg)

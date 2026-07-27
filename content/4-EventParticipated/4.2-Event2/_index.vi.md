@@ -66,4 +66,5 @@ Bên cạnh đó, buổi chia sẻ về AWS Cloud Practitioner đã giúp em có
 
 ![Event](/images/4-Event/Event2.jpg)
 
-![Event](/images/4-Event/Event2.1.jpg)
+
+![Event](/images/4-Event/event2.1.jpg)
