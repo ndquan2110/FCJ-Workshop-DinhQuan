@@ -7,6 +7,9 @@ pre: " <b> 3.1. </b> "
 ---
 
 # Modernizing KYC with AWS Serverless Solutions and AI Agents for Financial Services
+- **Author:**  Neeraj Kaushik, Amit Deshpande, Nisha Dekhtawala, and Subhash Sharma
+- **Release Date:** 23 APR 2026
+- **Categories:** [[Financial Services](https://aws.amazon.com/vi/blogs/architecture/category/industries/financial-services/)], [[Intermediate (200)](https://aws.amazon.com/vi/blogs/architecture/category/learning-levels/intermediate-200/)], [[Partner solutions](https://aws.amazon.com/vi/blogs/architecture/category/post-types/partner-solutions/)]
 ## Introduction
 In a financial environment that demands rapid processing and strict security, traditional KYC processes often face challenges due to manual operations, long waiting times, and a high risk of errors. This article explains how financial institutions can transform this process using a serverless architecture combined with AI agents.
 
