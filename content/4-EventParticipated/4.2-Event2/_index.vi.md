@@ -62,5 +62,6 @@ Bên cạnh đó, buổi chia sẻ về AWS Cloud Practitioner đã giúp em có
 
  - Chuỗi seminar đã giúp em hiểu rõ hơn về điện toán đám mây AWS, giám sát hệ thống (Monitoring), bảo mật ứng dụng (DevSecOps) và lộ trình chinh phục chứng chỉ AWS Cloud Practitioner. Những kiến thức và kinh nghiệm thực tế được chia sẻ không chỉ hỗ trợ quá trình học tập mà còn giúp em định hướng rõ hơn cho công việc trong tương lai. Đây là những nội dung hữu ích, góp phần nâng cao kiến thức chuyên môn và tạo động lực để em tiếp tục tìm hiểu, thực hành và phát triển kỹ năng trong lĩnh vực Cloud Computing.
 
- ### Một số hình ảnh khi tham gia sự kiện
- em không chụp hình tại sự kiện anh/chị thông cảm cho em !
+### Một số hình ảnh khi tham gia sự kiện
+
+No images available to display.

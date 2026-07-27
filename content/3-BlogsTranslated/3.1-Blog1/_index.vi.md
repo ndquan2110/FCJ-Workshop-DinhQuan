@@ -38,7 +38,7 @@ Mặc dù các quy trình đã được thiết lập này đã phục vụ ngà
 
 ## Kiến trúc giải pháp KYC gốc đám mây sử dụng AI tác nhân
 
-![Kiến trúc tác nhân cấp cao cho KYC theo thời gian thực](/images/3-BlogsTraslated/kientruc.png)
+![Kiến trúc tác nhân cấp cao cho KYC theo thời gian thực](/images/3-BlogsTranslated/kientruc.png)
 
 ---
 

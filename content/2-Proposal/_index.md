@@ -46,7 +46,7 @@ _Benefits and Return on Investment (ROI)_
 
 The AWS Student Management Portal is built on cloud-native architecture, combining serverless computing and event-driven design. The entire architecture is divided into independent functional layers, ensuring automatic scalability, cost optimization, and multi-layer security.
 
-![AWS Student Management Portal](/images/2-Proposal/aws.jpg)
+![AWS Student Management Portal architecture](/images/architecture/student-management-architecture.png)
 
 _AWS services used_
 

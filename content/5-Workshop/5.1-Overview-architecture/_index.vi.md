@@ -21,43 +21,7 @@ Hệ thống phục vụ ba nhóm người dùng:
 
 Ứng dụng được thiết kế tối ưu với mô hình Serverless để loại bỏ việc quản trị máy chủ (no EC2), tự động mở rộng theo tải và tối ưu hóa chi phí.
 
-```mermaid
-flowchart TD
-    User[Admin / Teacher / Student Browser] --> CF[Amazon CloudFront]
-    CF --> S3Frontend[S3 Frontend Bucket]
-
-    User --> Cognito[Amazon Cognito User Pool]
-    Cognito --> Groups[Cognito Groups: ADMIN / TEACHER / STUDENT]
-
-    User --> APIGW[Amazon API Gateway]
-    APIGW --> Authorizer[Cognito Authorizer]
-    Authorizer --> AccountLambda[Lambda Account Service]
-    Authorizer --> AcademicLambda[Lambda Academic Service]
-    Authorizer --> FileLambda[Lambda File Service]
-
-    AccountLambda --> Cognito
-    AccountLambda --> Users[(DynamoDB Users)]
-
-    AcademicLambda --> Students[(DynamoDB Students)]
-    AcademicLambda --> Teachers[(DynamoDB Teachers)]
-    AcademicLambda --> Classes[(DynamoDB Classes)]
-    AcademicLambda --> Grades[(DynamoDB Grades)]
-    AcademicLambda --> Materials[(DynamoDB Materials)]
-
-    FileLambda --> S3Files[S3 Documents and Materials Bucket]
-    FileLambda --> Materials
-
-    AccountLambda --> SQS[Amazon SQS]
-    AcademicLambda --> SQS
-    SQS --> EmailLambda[Lambda Notification Worker]
-    EmailLambda --> SES[Amazon SES]
-
-    AccountLambda --> CloudWatch[Amazon CloudWatch]
-    AcademicLambda --> CloudWatch
-    FileLambda --> CloudWatch
-    EmailLambda --> CloudWatch
-    APIGW --> CloudWatch
-```
+![Sơ đồ kiến trúc AWS Student Management Portal](/images/architecture/student-management-architecture.png)
 
 ---
 
