@@ -40,4 +40,4 @@ Key topics for the week include:
 
 ### Overview
 
-This week, I explored **serverless application architecture** on AWS. A basic serverless architecture can use **AWS Lambda** to process logic, **Amazon API Gateway** to receive requests from users, **Amazon Cognito** for authentication, **Amazon DynamoDB/S3** for data storage, and messaging services like **SQS/SNS** for asynchronous processing. AWS Study Group also describes a backend serverless that can use Lambda, API Gateway, S3, DynamoDB, and Cognito to build a complete application. ([000066.awsstudygroup.com][2])
+This week, I explored **serverless application architecture** on AWS. A basic serverless architecture can use **AWS Lambda** to process logic, **Amazon API Gateway** to receive requests from users, **Amazon Cognito** for authentication, **Amazon DynamoDB/S3** for data storage, and messaging services like **SQS/SNS** for asynchronous processing. AWS Study Group also describes a backend serverless that can use Lambda, API Gateway, S3, DynamoDB, and Cognito to build a complete application. <[000066.awsstudygroup.com][2]>

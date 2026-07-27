@@ -35,17 +35,4 @@ Dự án sử dụng các dịch vụ như **Amazon S3, CloudFront, Cognito, API
 
 Trong tuần này, tôi đã bắt đầu áp dụng kiến thức AWS vào dự án thực tế. Thay vì chỉ tìm hiểu từng dịch vụ riêng lẻ, tôi tập trung vào việc kết hợp các dịch vụ AWS để xây dựng một hệ thống hoàn chỉnh. Các dịch vụ được lựa chọn theo đúng vai trò trong kiến trúc, bao gồm lưu trữ frontend, xác thực người dùng, xử lý API, lưu dữ liệu, gửi thông báo và giám sát hệ thống.
 
-### Kiến thức đã áp dụng
-
-Sau khi thực hiện tuần 12, tôi đã áp dụng được:
-
-* Sử dụng **Amazon S3** để lưu trữ frontend và file của hệ thống.
-* Sử dụng **Amazon CloudFront** để phân phối website, tăng tốc truy cập và cải thiện hiệu năng.
-* Sử dụng **Amazon Cognito** để xác thực người dùng, hỗ trợ đăng ký, đăng nhập và cấp token.
-* Sử dụng **Amazon API Gateway** để tạo REST API và làm điểm giao tiếp giữa frontend với backend.
-* Sử dụng **AWS Lambda** để xử lý logic nghiệp vụ theo mô hình serverless.
-* Sử dụng **Amazon DynamoDB** để lưu trữ dữ liệu chính của hệ thống.
-* Sử dụng **Amazon SQS** để xử lý tác vụ bất đồng bộ.
-* Sử dụng **Amazon SNS** và **Amazon SES** để gửi thông báo hoặc email cho người dùng.
-* Sử dụng **Amazon CloudWatch** để theo dõi log, kiểm tra lỗi và hỗ trợ troubleshooting.
 

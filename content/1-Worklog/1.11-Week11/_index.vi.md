@@ -41,4 +41,4 @@ Các nội dung trọng tâm của tuần bao gồm:
 
 ### Tổng quan
 
-Trong tuần này, tôi đã tìm hiểu mô hình **serverless application** trên AWS. Một kiến trúc serverless cơ bản có thể sử dụng **AWS Lambda** để xử lý logic, **Amazon API Gateway** để nhận request từ người dùng, **Amazon Cognito** để xác thực, **Amazon DynamoDB/S3** để lưu trữ dữ liệu và các dịch vụ messaging như **SQS/SNS** để xử lý bất đồng bộ. AWS Study Group cũng mô tả backend serverless có thể dùng Lambda, API Gateway, S3, DynamoDB và Cognito để xây dựng ứng dụng hoàn chỉnh. ([000066.awsstudygroup.com][2])
+Trong tuần này, tôi đã tìm hiểu mô hình **serverless application** trên AWS. Một kiến trúc serverless cơ bản có thể sử dụng **AWS Lambda** để xử lý logic, **Amazon API Gateway** để nhận request từ người dùng, **Amazon Cognito** để xác thực, **Amazon DynamoDB/S3** để lưu trữ dữ liệu và các dịch vụ messaging như **SQS/SNS** để xử lý bất đồng bộ. AWS Study Group cũng mô tả backend serverless có thể dùng Lambda, API Gateway, S3, DynamoDB và Cognito để xây dựng ứng dụng hoàn chỉnh. <[000066.awsstudygroup.com][2]>

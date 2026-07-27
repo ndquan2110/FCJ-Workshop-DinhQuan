@@ -40,5 +40,5 @@ Các nội dung trọng tâm của tuần bao gồm:
 
 ### Tổng quan
 
-Trong tuần này, tôi đã tìm hiểu các dịch vụ hỗ trợ **tối ưu chi phí và tăng cường bảo mật hệ thống trên AWS**. Nội dung gồm hai nhóm chính: nhóm quản lý chi phí với **AWS Budgets** và **AWS Cost Explorer**, nhóm bảo mật với **AWS KMS**, **AWS WAF** và **AWS Security Hub**. AWS Budgets hỗ trợ theo dõi chi phí và mức sử dụng theo ngân sách, còn Cost Explorer hỗ trợ xem và phân tích chi phí sử dụng AWS. ([AWS Documentation][2])
+Trong tuần này, tôi đã tìm hiểu các dịch vụ hỗ trợ **tối ưu chi phí và tăng cường bảo mật hệ thống trên AWS**. Nội dung gồm hai nhóm chính: nhóm quản lý chi phí với **AWS Budgets** và **AWS Cost Explorer**, nhóm bảo mật với **AWS KMS**, **AWS WAF** và **AWS Security Hub**. AWS Budgets hỗ trợ theo dõi chi phí và mức sử dụng theo ngân sách, còn Cost Explorer hỗ trợ xem và phân tích chi phí sử dụng AWS. <[AWS Documentation][2]>
 

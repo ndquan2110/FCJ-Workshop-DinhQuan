@@ -41,5 +41,5 @@ Key topics for the week include:
 
 ### Overview
 
-This week, I explored services that support **cost optimization and strengthen system security on AWS**. The content has two main groups: cost management with **AWS Budgets** and **AWS Cost Explorer**, and security with **AWS KMS**, **AWS WAF**, and **AWS Security Hub**. AWS Budgets helps track costs and usage against budgets, while Cost Explorer helps view and analyze AWS usage costs. ([AWS Documentation][2])
+This week, I explored services that support **cost optimization and strengthen system security on AWS**. The content has two main groups: cost management with **AWS Budgets** and **AWS Cost Explorer**, and security with **AWS KMS**, **AWS WAF**, and **AWS Security Hub**. AWS Budgets helps track costs and usage against budgets, while Cost Explorer helps view and analyze AWS usage costs. <[AWS Documentation][2]>
 

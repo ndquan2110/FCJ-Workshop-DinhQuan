@@ -42,4 +42,4 @@ Key topics for the week include:
 
 ### Overview
 
-This week, I explored the services for **monitoring and recording system activity on AWS**. Amazon CloudWatch is used to collect metrics, logs, alarms, and dashboards; meanwhile AWS CloudTrail focuses on recording user activity and API calls in the AWS account. According to AWS documentation, CloudWatch serves performance and operational-state monitoring, while CloudTrail serves auditing, security, and activity-history review. ([AWS Documentation][2])
+This week, I explored the services for **monitoring and recording system activity on AWS**. Amazon CloudWatch is used to collect metrics, logs, alarms, and dashboards; meanwhile AWS CloudTrail focuses on recording user activity and API calls in the AWS account. According to AWS documentation, CloudWatch serves performance and operational-state monitoring, while CloudTrail serves auditing, security, and activity-history review. <[AWS Documentation][2]>

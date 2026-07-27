@@ -42,4 +42,4 @@ Các nội dung trọng tâm của tuần bao gồm:
 
 ### Tổng quan
 
-Trong tuần này, tôi đã tìm hiểu các dịch vụ phục vụ cho việc **giám sát và ghi nhận hoạt động hệ thống trên AWS**. Amazon CloudWatch được sử dụng để thu thập metric, log, tạo alarm và dashboard; trong khi đó AWS CloudTrail tập trung vào việc ghi lại hoạt động người dùng và API call trong tài khoản AWS. Theo tài liệu AWS, CloudWatch phục vụ theo dõi hiệu năng và trạng thái vận hành, còn CloudTrail phục vụ audit, bảo mật và kiểm tra lịch sử hoạt động. ([AWS Documentation][2])
+Trong tuần này, tôi đã tìm hiểu các dịch vụ phục vụ cho việc **giám sát và ghi nhận hoạt động hệ thống trên AWS**. Amazon CloudWatch được sử dụng để thu thập metric, log, tạo alarm và dashboard; trong khi đó AWS CloudTrail tập trung vào việc ghi lại hoạt động người dùng và API call trong tài khoản AWS. Theo tài liệu AWS, CloudWatch phục vụ theo dõi hiệu năng và trạng thái vận hành, còn CloudTrail phục vụ audit, bảo mật và kiểm tra lịch sử hoạt động. <[AWS Documentation][2]>
