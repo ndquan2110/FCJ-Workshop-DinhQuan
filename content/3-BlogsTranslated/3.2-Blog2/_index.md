@@ -7,6 +7,9 @@ pre: " <b> 3.2. </b> "
 ---
 
 # A Unified JSON Data Search System on AWS
+- **Author:**  Ezat Karimi và Jon Handler
+- **Release Date:**  08 APR 2026
+- **Categories:** [[Advanced (300)](https://aws.amazon.com/vi/blogs/database/category/learning-levels/advanced-300/)],[[ Amazon Aurora](https://aws.amazon.com/vi/blogs/database/category/database/amazon-aurora/)], [[Amazon DocumentDB](https://aws.amazon.com/vi/blogs/database/category/database/amazon-document-db/)], [[Amazon DynamoDB](https://aws.amazon.com/vi/blogs/database/category/database/amazon-dynamodb/)], [[Amazon OpenSearch Service](https://aws.amazon.com/vi/blogs/database/category/analytics/amazon-elasticsearch-service/)],[[ Amazon RDS](https://aws.amazon.com/vi/blogs/database/category/database/amazon-rds/)], [Amazon Redshift](https://aws.amazon.com/vi/blogs/database/category/database/amazon-redshift/), [Database](https://aws.amazon.com/vi/blogs/database/category/database/), [PostgreSQL compatible](https://aws.amazon.com/vi/blogs/database/category/database/amazon-aurora/postgresql-compatible/), [RDS for PostgreSQL](https://aws.amazon.com/vi/blogs/database/category/database/amazon-rds/rds-for-postgresql/), [Technical How-to](https://aws.amazon.com/vi/blogs/databas
 ## Introduction
 Modern applications such as streaming platforms, e-commerce systems, and large data products rarely store all data in a single database. Some data requires low-latency access, some requires strong transactional consistency, and other data is stored for analytics or long-term reporting.
 

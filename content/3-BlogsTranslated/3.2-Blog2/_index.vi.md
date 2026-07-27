@@ -8,7 +8,9 @@ pre: " <b> 3.2. </b> "
 
 
 # Hệ Thống Tìm Kiếm Dữ Liệu JSON Hợp Nhất Trên AWS
-
+- **Tác giả:**  Ezat Karimi và Jon Handler
+- **Ngày phát hành:**  08 APR 2026
+- **Chuyên mục:** [[Advanced (300)](https://aws.amazon.com/vi/blogs/database/category/learning-levels/advanced-300/)],[[ Amazon Aurora](https://aws.amazon.com/vi/blogs/database/category/database/amazon-aurora/)], [[Amazon DocumentDB](https://aws.amazon.com/vi/blogs/database/category/database/amazon-document-db/)], [[Amazon DynamoDB](https://aws.amazon.com/vi/blogs/database/category/database/amazon-dynamodb/)], [[Amazon OpenSearch Service](https://aws.amazon.com/vi/blogs/database/category/analytics/amazon-elasticsearch-service/)],[[ Amazon RDS](https://aws.amazon.com/vi/blogs/database/category/database/amazon-rds/)], [Amazon Redshift](https://aws.amazon.com/vi/blogs/database/category/database/amazon-redshift/), [Database](https://aws.amazon.com/vi/blogs/database/category/database/), [PostgreSQL compatible](https://aws.amazon.com/vi/blogs/database/category/database/amazon-aurora/postgresql-compatible/), [RDS for PostgreSQL](https://aws.amazon.com/vi/blogs/database/category/database/amazon-rds/rds-for-postgresql/), [Technical How-to](https://aws.amazon.com/vi/blogs/database/category/post-types/technical-how-to/)
 ## Giới thiệu
 Trong các ứng dụng hiện đại như nền tảng streaming, thương mại điện tử hoặc hệ thống dữ liệu lớn, dữ liệu thường không nằm trong một cơ sở dữ liệu duy nhất. Một phần dữ liệu cần truy xuất rất nhanh, một phần cần đảm bảo giao dịch, một phần khác lại phục vụ phân tích hoặc lưu trữ lâu dài.
 
