@@ -22,23 +22,9 @@ Hệ thống phục vụ ba nhóm người dùng:
 #### Danh sách tài khoản thử nghiệm theo nhóm quyền:
  Nhóm quyền         | Email đăng nhập       | Mật khẩu    | Chức năng quan sát
   --------------------|-----------------------|-------------|-----------------------
-   Admin              |  admin@example.com    |  Abc12345!  | Thấy toàn bộ chức
-                      |                       |             | năng (gồm quản lý
-                      |                       |             | giáo viên, log, tài
-                      |                       |             | khoản).
-   Giáo viên / Cán bộ |  staff@example.com    |  Abc12345!  | Thấy menu Sinh viên,
-                      |                       |             | Điểm số, Tài liệu học
-                      |                       |             | tập, Hồ sơ, Thông
-                      |                       |             | báo. (Ẩn phần cấu
-                      |                       |             | hình Admin và Giáo
-                      |                       |             | viên).
-   Sinh viên          |  student@example.com  |  Abc12345!  | Chỉ thấy menu Tổng
-                      |                       |             | quan, Hồ sơ cá nhân,
-                      |                       |             | Xem điểm số, Tài liệu
-                      |                       |             | học tập và Thông báo.
-                      |                       |             | (Ẩn toàn bộ mục quản
-                      |                       |             | lý còn lại).
-
+   Admin              |  admin@example.com    |  Abc12345!  | Thấy toàn bộ chức năng (gồm quản lý giáo viên, log, tài khoản).
+   Giáo viên / Cán bộ |  staff@example.com    |  Abc12345!  | Thấy menu Sinh viên, Điểm số, Tài liệu học tập, Hồ sơ, Thông báo. (Ẩn phần cấu hình Admin và Giáo viên).
+   Sinh viên          |  student@example.com  |  Abc12345!  | Chỉ thấy menu Tổng quan, Hồ sơ cá nhân, Xem điểm số, Tài liệu học tập và Thông báo. (Ẩn toàn bộ mục quản lý còn lại).
 ---
 
 ### Kiến trúc tổng quan (Architecture)
