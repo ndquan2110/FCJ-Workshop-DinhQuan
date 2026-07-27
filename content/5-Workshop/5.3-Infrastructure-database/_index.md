@@ -3,7 +3,7 @@ title: "Infrastructure & Database"
 date: 2024-01-01
 weight: 3
 chapter: false
-pre: " <b> 5. </b> "
+pre: " <b> 5.3 </b> "
 ---
 
 In this section, we will initialize the core backend infrastructure for data storage, user authentication, and message queuing: **DynamoDB**, **S3 Bucket**, **SQS Queue**, and **Amazon Cognito**.
