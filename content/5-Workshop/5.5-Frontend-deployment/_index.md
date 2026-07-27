@@ -1,95 +1,134 @@
 ---
-title: "Frontend & Hosting"
+title: "Frontend Deployment & Hosting"
 date: 2024-01-01
-weight: 5
+weight: 6
 chapter: false
 pre: " <b> 5.5. </b> "
 ---
 
-In this section, we will explore the frontend layout of the **AWS Student Management Portal**, configure connection variables for AWS Cognito and API Gateway, run the application locally, and deploy the packaged assets to **Amazon S3** distributed via **Amazon CloudFront**.
+In this section, we will review the frontend structure of the **AWS Student Management Portal**, configure environment variables for AWS Cognito and API Gateway, test the application locally, bundle production assets onto **Amazon S3**, and distribute global static web assets via **Amazon CloudFront**.
 
 ---
 
-### 1. Frontend Layout & Authorization
+### Step 1: Frontend Structure & Authorization
 
-The frontend is built using **ReactJS** and bundled via **Vite**.
+The Frontend application is built with **ReactJS** and bundled using **Vite**.
+
+![AWS Student Management Portal Web UI](/images/5-Workshop/5.5-Frontend-deployment/student_portal_app_ui.png)
 
 * **Protected Routing**: The application uses a `ProtectedRoute` component to validate the user's Cognito-issued JWT Token.
 * **Group-Based Authorization**:
-  * **Admin/Staff**: Full administrative access to the Dashboard, student/teacher rosters, grade listings, system activity logs, and settings.
-  * **Teacher**: Restricted to viewing assigned classes, entering or updating student grades, and uploading learning resources.
-  * **Student**: Restricted to viewing personal academic profiles, checking individual grade sheets, and downloading resources uploaded by teachers.
+  * **Admin/Staff**: Access to all modules including Dashboard, Student/Teacher/Grades management, System Logs, and Admin Settings.
+  * **Teacher**: Access to assigned class rosters, posting/updating student grades, and uploading learning materials.
+  * **Student**: Access to personal profile, viewing personal grades, and downloading learning materials uploaded by teachers.
 
 ---
 
-### 2. Configure Frontend Environment Variables
+### Step 2: Configure Frontend Environment Variables (.env)
 
-To connect your React Frontend with the AWS resources created in previous steps, create a file named `.env` in the `frontend/` directory with the following variables:
+To connect the React frontend with your AWS backend infrastructure, create a `frontend/.env` file inside the `frontend/` directory with your actual resource parameters:
 
 ```env
 # AWS Cognito User Pool Configuration
-VITE_USER_POOL_ID=us-east-1_xxxxxxxxx
-VITE_APP_CLIENT_ID=xxxxxxxxxxxxxxxxxx
+VITE_USER_POOL_ID=us-east-1_7SwNQ0qYm
+VITE_APP_CLIENT_ID=student-portal-react-client
 
-# API Gateway Endpoint (The Invoke URL copied from the previous section)
-VITE_API_ENDPOINT=https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod
+# API Gateway Endpoint (Actual Invoke URL)
+VITE_API_ENDPOINT=https://9k9i3ukwdh.execute-api.us-east-1.amazonaws.com/prod
 
-# AWS Region running your services
+# AWS Region
 VITE_AWS_REGION=us-east-1
 ```
 
-*(Be sure to replace these placeholder values with your actual User Pool ID, App Client ID, and API Gateway Invoke URL).*
-
 ---
 
-### 3. Run the Application Locally
+### Step 3: Local Testing & Verification
 
-Once your `.env` file is in place, install dependencies and launch the local development server to test the UI:
+With `.env` configured, start the local development server to test login authentication and dashboard routing:
 
 ```bash
 cd frontend
 npm run dev
 ```
 
-Open your browser and navigate to [http://localhost:5173](http://localhost:5173).
+Open your browser and navigate to [http://localhost:5173](http://localhost:5173). 
 
-You can log in using the automatically generated Admin demo credentials:
+Test sign-in using the default admin demo credentials:
 * **Email**: `admin@example.com`
 * **Password**: `Abc12345!`
 
-Upon logging in for the first time, you will be prompted to choose a new permanent password.
+Upon first login, Cognito will prompt you to set a permanent new password.
+
+![Student Portal Admin Page UI](/images/5-Workshop/5.5-Frontend-deployment/student_portal_admin.jpeg)
 
 ---
 
-### 4. Build Production Package & Deploy to Amazon S3
+### Step 4: Create S3 Frontend Bucket & Upload Build Assets via AWS Web Console
 
-When you are satisfied with your local testing, compile the React source files into optimized, static HTML/JS/CSS assets ready for AWS hosting.
+Once the local application runs cleanly, bundle the React application into production static HTML/JS/CSS assets to host on Amazon S3.
 
-#### 1. Compile Assets (Build)
-```bash
-npm run build
-```
-This command generates a `dist/` directory containing all the production-ready static assets.
+#### 📌 Step-by-Step AWS Web Console Guide:
+1. Run the build command locally:
+   ```bash
+   cd frontend
+   npm run build
+   ```
+   This creates a `dist/` directory containing bundled static assets.
 
-#### 2. Create S3 Bucket for Frontend Hosting
-Create a new S3 bucket to store these static files (the name must be globally unique):
-```bash
-aws s3 mb s3://student-portal-frontend-<yourname> --region us-east-1
-```
+2. Log in to the [Amazon S3 Console](https://us-east-1.console.aws.amazon.com/s3/buckets?region=us-east-1).
+3. Click **Create bucket**.
 
-#### 3. Sync Assets (Deploy)
-Upload the contents of the `dist/` folder to the S3 bucket:
-```bash
-aws s3 sync dist/ s3://student-portal-frontend-<yourname> --delete
-```
+![Create S3 Frontend Bucket Console UI](/images/5-Workshop/5.5-Frontend-deployment/create_bucket_s3.png)
+
+4. Enter **Bucket name**: `student-portal-frontend-147997148454` *(Bucket name must be globally unique)*.
+5. Select **AWS Region**: `us-east-1` (US East - N. Virginia).
+6. Under **Block Public Access settings**, keep **Block *all* public access** checked to protect the S3 bucket (allowing access solely via CloudFront OAC).
+7. Scroll down and click **Create bucket**.
+8. Click on your created bucket `student-portal-frontend-147997148454` → Click **Upload**.
+9. Drag and drop all files and folders from inside `dist/` into the upload window and click **Upload**.
+
+![Upload Static Assets to S3 Bucket Console UI](/images/5-Workshop/5.5-Frontend-deployment/Upload_bucket.png)
 
 ---
 
-### 5. Distribute via Amazon CloudFront (Advanced/Optional)
+### Step 5: Initialize & Distribute via Amazon CloudFront via AWS Web Console
 
-To optimize load times and serve the web portal securely over HTTPS, configure an **Amazon CloudFront Distribution** pointing to your S3 frontend bucket:
-1. Open the **CloudFront Console** → click **Create distribution**.
-2. Set the **Origin domain** to point directly to your frontend S3 bucket.
-3. Configure **Origin Access Control (OAC)** to secure the bucket, restricting direct public access to S3 so that users can only access the files through CloudFront.
-4. Set the **Default root object** to `index.html`.
-5. Wait for the distribution deployment to complete (approximately 5-10 minutes). Once deployed, you will receive a CloudFront domain name (e.g., `https://d123456abcdef8.cloudfront.net`) to access your application securely from anywhere.
+To optimize global load performance and enable HTTPS security, deploy an **Amazon CloudFront Distribution** pointing to your frontend S3 bucket as its Origin.
+
+#### 📌 Step-by-Step AWS Web Console Guide:
+1. Log in to the [Amazon CloudFront Console](https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=us-east-1#/distributions).
+2. Click **Create distribution**.
+3. Under **Origin domain**, select your frontend S3 bucket (`student-portal-frontend-147997148454.s3.amazonaws.com`).
+4. Under **Origin access**, select **Origin access control settings (recommended)** (OAC) → Click **Create control setting** → Keep defaults and click **Create**.
+5. Under **Default cache behavior**:
+   - For **Viewer protocol policy**, select **Redirect HTTP to HTTPS**.
+   - For **Allowed HTTP methods**, select **GET, HEAD**.
+6. Under **Settings**:
+   - Enter **Default root object**: `index.html`.
+7. Click **Create distribution**.
+8. Copy the generated **S3 bucket policy** and paste it into the **Permissions** > **Bucket policy** section of your frontend S3 bucket to grant read access to CloudFront.
+
+![Update S3 Bucket Policy for CloudFront OAC](/images/5-Workshop/5.5-Frontend-deployment/Upload_bucket.png)
+
+9. Wait for the distribution status to change to **Enabled** (approx. 3-5 minutes). Retrieve your live CloudFront domain:
+   ```text
+   https://d3th0yl82lu593.cloudfront.net/
+   ```
+
+![Amazon CloudFront Distribution E39TFB7INWHA6Y Details](/images/5-Workshop/5.5-Frontend-deployment/CloudFront_Distributions_E39TFB7INWHA6Y.png)
+
+---
+
+### Step 6: Demo Test Accounts & Role Authorization Table
+
+| Role Group | Login Email | Password | Authorized Features |
+|------------|-------------|----------|---------------------|
+| **Admin** | `admin@example.com` | `Abc12345!` | Full system access (Teacher management, logs, accounts). |
+| **Teacher / Staff** | `staff@example.com` | `Abc12345!` | Access Students, Grades, Learning Materials, Profiles, Notifications. |
+| **Student** | `student@example.com` | `Abc12345!` | Access Overview, Personal Profile, Grade View, Learning Materials, and Notifications. |
+
+![Student Portal Admin Page UI](/images/5-Workshop/5.5-Frontend-deployment/student_portal_admin.jpeg)
+
+![Student Portal Staff Page UI](/images/5-Workshop/5.5-Frontend-deployment/student_portal_staff.jpeg)
+
+![Student Portal Student Page UI](/images/5-Workshop/5.5-Frontend-deployment/student_portal_student.jpeg)

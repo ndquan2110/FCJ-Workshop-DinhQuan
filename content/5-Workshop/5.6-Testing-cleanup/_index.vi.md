@@ -1,103 +1,87 @@
 ---
 title: "Kiểm thử & Dọn dẹp"
 date: 2024-01-01
-weight: 6
+weight: 7
 chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-Trong phần cuối của workshop, chúng ta sẽ thực hiện kiểm thử toàn bộ hệ thống API thông qua bộ **Postman Collection**, giám sát hoạt động hệ thống bằng **CloudWatch** và tiến hành dọn dẹp các dịch vụ AWS để tránh phát sinh chi phí.
+Trong phần cuối của workshop, chúng ta sẽ thực hiện giám sát hoạt động hệ thống bằng **Amazon CloudWatch Logs** và tiến hành dọn dẹp các dịch vụ AWS đã khởi tạo để tránh phát sinh chi phí.
 
 ---
 
-### 1. Kiểm thử API bằng Postman
-
-Dự án cung cấp sẵn một file Postman Collection giúp bạn kiểm thử nhanh chóng các API backend mà không cần qua giao diện Frontend.
-
-#### 1.1. Chuẩn bị Postman
-1. Mở ứng dụng **Postman**.
-2. Click **Import** → Chọn file `postman/student-management-api.postman_collection.json` từ thư mục dự án.
-3. Tạo hoặc cập nhật các biến môi trường trong Postman:
-   * `baseUrl`: Đường dẫn Invoke URL của API Gateway (ví dụ: `https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod`).
-   * `idToken`: Mã token JWT lấy được từ Cognito sau khi đăng nhập thành công.
-
-#### 1.2. Lấy JWT Token từ Cognito để kiểm thử
-Sau khi người dùng (ví dụ: `admin@example.com`) đăng nhập thông qua Cognito, Cognito sẽ trả về một chuỗi `idToken` (JWT). 
-Bạn copy chuỗi này và dán vào trường Bearer Token của Postman để thực hiện các yêu cầu API yêu cầu quyền quản trị (như Tạo sinh viên, Xóa giáo viên...).
-
----
-
-### 2. Giám sát hệ thống qua CloudWatch
+### 1. Giám sát hệ thống qua CloudWatch
 
 Mỗi khi các hàm Lambda được kích hoạt từ API Gateway hoặc SQS, log của chúng sẽ được ghi nhận tự động tại **Amazon CloudWatch Logs**.
 
-* **Cách kiểm tra log**:
-  1. Truy cập **CloudWatch Console** → Chọn **Log groups** ở menu bên trái.
-  2. Tìm kiếm nhóm log tương ứng với hàm Lambda bạn muốn kiểm tra (ví dụ: `/aws/lambda/getStudents` hoặc `/aws/lambda/sendEmailWorker`).
-  3. Chọn log stream mới nhất để theo dõi chi tiết quá trình xử lý, lỗi phát sinh hoặc mã trạng thái trả về.
+#### 📌 Từng bước kiểm tra log trên AWS Console:
+1. Đăng nhập vào [Amazon CloudWatch Console](https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups).
+2. Chọn **Log groups** ở menu bên trái.
+3. Tìm kiếm nhóm log tương ứng với hàm Lambda thực tế: `/aws/lambda/getStudents` hoặc `/aws/lambda/sendEmailWorker`.
+4. Chọn log stream mới nhất để theo dõi chi tiết quá trình xử lý, lỗi phát sinh hoặc mã trạng thái trả về.
+
+![Kiểm thử & Giám sát CloudWatch Logs](/images/5-Workshop/5.6-Testing-cleanup/postman_cloudwatch_testing.png)
 
 ---
 
-### 3. Dọn dẹp tài nguyên trên AWS (Cleanup)
+### 2. Dọn dẹp tài nguyên trên AWS (Cleanup)
 
 > [!CAUTION]
-> Để tránh phát sinh chi phí không mong muốn trên tài khoản AWS của bạn, hãy chắc chắn thực hiện đầy đủ các bước dọn dẹp dưới đây sau khi đã hoàn thành buổi học hoặc báo cáo.
+> Để tránh phát sinh chi phí không mong muốn trên tài khoản AWS của bạn, hãy chắc chắn thực hiện đầy đủ các bước dọn dẹp dưới đây trên AWS Web Console sau khi đã hoàn thành bài tập hoặc báo cáo.
 
-Chạy tuần tự các lệnh sau trong Terminal/Command Prompt để xóa toàn bộ các dịch vụ đã tạo:
+#### 📌 Dọn dẹp từng dịch vụ trên AWS Web Console:
 
-#### 1. Xóa các hàm Lambda
-```bash
-for fn in createStudent getStudents getStudentById updateStudent deleteStudent \
-          createTeacher getTeachers getTeacherById updateTeacher deleteTeacher \
-          createGrade getGrades getGradeById updateGrade deleteGrade \
-          docUploadUrl docSaveMetadata materialUploadUrl materialSaveMetadata \
-          getMaterials sendEmailWorker; do
-  aws lambda delete-function --function-name $fn --region us-east-1
-done
-```
+##### 1. Xóa Amazon CloudFront Distribution (Nếu có)
+1. Đăng nhập vào [Amazon CloudFront Console](https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=us-east-1#/distributions).
+2. Chọn Distribution `E39TFB7INWHA6Y` → Nhấp chọn **Disable**.
+3. Chờ trạng thái chuyển sang **Disabled** (khoảng 3-5 phút), chọn lại Distribution và nhấp **Delete**.
 
-#### 2. Xóa API Gateway
-```bash
-aws apigateway delete-rest-api --rest-api-id <API_ID> --region us-east-1
-```
+![Xóa CloudFront Distribution trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_cloudfront.jpeg)
 
-#### 3. Xóa Cognito User Pool
-```bash
-aws cognito-idp delete-user-pool --user-pool-id <USER_POOL_ID> --region us-east-1
-```
+##### 2. Xóa Amazon S3 Buckets
+1. Đăng nhập vào [Amazon S3 Console](https://us-east-1.console.aws.amazon.com/s3/buckets?region=us-east-1).
+2. Chọn Bucket `student-documents-147997148454` → Nhấp chọn **Empty** (Xóa toàn bộ đối tượng bên trong) → Xác nhận xóa.
+3. Nhấp chọn **Delete** để xóa bucket.
+4. Lặp lại các thao tác trên cho S3 Frontend Bucket `student-portal-frontend-147997148454`.
 
-#### 4. Xóa hàng đợi SQS
-```bash
-aws sqs delete-queue --queue-url <QUEUE_URL> --region us-east-1
-```
+![Xóa S3 Buckets trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_s3.jpeg)
 
-#### 5. Xóa các bảng DynamoDB
-```bash
-for table in Students Teachers Grades Materials Documents; do
-  aws dynamodb delete-table --table-name $table --region us-east-1
-done
-```
+##### 3. Xóa Amazon API Gateway
+1. Đăng nhập vào [Amazon API Gateway Console](https://us-east-1.console.aws.amazon.com/apigateway/main/apis?region=us-east-1).
+2. Chọn REST API `student-portal-api` (`9k9i3ukwdh`) → Nhấp chọn menu **Actions** → Chọn **Delete**.
 
-#### 6. Xóa các S3 Buckets
-Lưu ý: S3 không cho phép xóa bucket nếu bên trong vẫn còn file. Do đó bạn cần xóa sạch các file bên trong trước:
-```bash
-# Xóa file và xóa bucket tài liệu
-aws s3 rm s3://student-documents-<yourname> --recursive
-aws s3 rb s3://student-documents-<yourname>
+![Xóa REST API Gateway trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_api.jpeg)
 
-# Xóa file và xóa bucket frontend
-aws s3 rm s3://student-portal-frontend-<yourname> --recursive
-aws s3 rb s3://student-portal-frontend-<yourname>
-```
+##### 4. Xóa các hàm AWS Lambda
+1. Đăng nhập vào [AWS Lambda Console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions).
+2. Tích chọn các hàm Lambda đã tạo (ví dụ: `getStudents`, `createStudent`, `sendEmailWorker`,...) → Nhấp **Actions** → Chọn **Delete**.
 
-#### 7. Xóa CloudFront Distribution (Nếu có tạo)
-1. Vào CloudFront Console.
-2. Chọn Distribution của bạn và click **Disable**.
-3. Chờ trạng thái chuyển sang disabled (khoảng 5 phút), sau đó chọn Distribution và click **Delete**.
+![Xóa tất cả các hàm AWS Lambda trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_lambda.jpeg)
 
-#### 8. Xóa IAM Role
-```bash
-aws iam delete-role --role-name student-portal-lambda
-```
+##### 5. Xóa Amazon Cognito User Pool
+1. Đăng nhập vào [Amazon Cognito Console](https://us-east-1.console.aws.amazon.com/cognito/v2/idp/user-pools?region=us-east-1).
+2. Chọn User Pool `student-portal-user-pool` (`us-east-1_7SwNQ0qYm`) → Nhấp chọn nút **Delete pool** → Nhập tên User Pool để xác nhận xóa.
 
-Chúc mừng bạn đã hoàn thành bài Lab triển khai hệ thống quản lý sinh viên Serverless trên AWS!
+![Xóa Cognito User Pool trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_cognito.jpeg)
+
+##### 6. Xóa Amazon SQS Queue
+1. Đăng nhập vào [Amazon SQS Console](https://us-east-1.console.aws.amazon.com/sqs/v2/home?region=us-east-1#/queues).
+2. Chọn Queue `student-notifications` → Nhấp chọn nút **Delete**.
+
+![Xóa SQS Queue trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_sqs.jpeg)
+
+##### 7. Xóa các bảng Amazon DynamoDB
+1. Đăng nhập vào [Amazon DynamoDB Console](https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#tables).
+2. Tích chọn các bảng đã tạo (`Students`, `Teachers`, `Grades`, `Materials`, `Documents`, `Classes`) → Nhấp chọn nút **Delete tables**.
+
+![Xóa các bảng DynamoDB trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_database.jpeg)
+
+##### 8. Xóa IAM Role
+1. Đăng nhập vào [AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles).
+2. Tìm kiếm role `student-portal-lambda` → Tích chọn và nhấp chọn **Delete**.
+
+![Xóa IAM Role trên AWS Console](/images/5-Workshop/5.6-Testing-cleanup/delete_iam.jpeg)
+
+---
+
+🎉 **Chúc mừng bạn đã hoàn thành bài Lab triển khai Hệ thống Quản lý Sinh viên Serverless trên AWS!**

@@ -1,82 +1,118 @@
 ---
-title: "Backend & API Gateway"
+title: "Backend & API Gateway Deployment"
 date: 2024-01-01
-weight: 4
+weight: 5
 chapter: false
 pre: " <b> 5.4. </b> "
 ---
 
-In this section, we will package and deploy the backend source code (Node.js) to **AWS Lambda** and configure **Amazon API Gateway** to act as a secure API entry point integrated with a **Cognito Authorizer**.
+In this section, we will manually build and configure the entire Backend infrastructure on the **AWS Management Console**, including creating IAM Roles, setting up **AWS Lambda** functions (Node.js), and configuring **Amazon API Gateway** with **Cognito Authorizer** integration.
 
 ---
 
-### Step 1: Create an IAM Role for Lambda
+### Step 1: Create IAM Role for Lambda via AWS Web Console
 
-Before deploying the Lambda functions, you must configure an IAM Role to grant the necessary minimum permissions required for backend logic execution:
-* Read and write permissions on the 5 **DynamoDB** tables.
-* Permission to generate Presigned URLs and write objects to the **S3 Bucket**.
-* Permission to publish messages to the **SQS Queue**.
-* Permission to send automated emails via **Amazon SES**.
-* Permission to write execution logs to **Amazon CloudWatch Logs**.
+Before deploying Lambda functions, we need to create an IAM Role to grant least-privilege permissions required by Lambda to interact with DynamoDB, S3, SQS, SES, and CloudWatch Logs.
 
-You can create an IAM Role named `student-portal-lambda` through the IAM Console or let the infrastructure setup script configure it:
-```bash
-# Retrieve the IAM Role ARN after creation
-LAMBDA_ROLE_ARN=arn:aws:iam::<ACCOUNT_ID>:role/student-portal-lambda
-```
+#### 📌 Step-by-Step AWS Web Console Guide:
+1. Log in to the [AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles).
+2. In the left navigation pane, click **Roles** → Click **Create role**.
+3. **Step 1 (Select trusted entity)**: Select **AWS service**, under Use case select **Lambda**. Click **Next**.
+4. **Step 2 (Add permissions)**: Search for and attach the following policies:
+   - `AWSLambdaBasicExecutionRole` (Permission to write logs to CloudWatch)
+   - `AmazonDynamoDBFullAccess` (Permission to read/write 6 DynamoDB tables)
+   - `AmazonS3FullAccess` (Permission to read/write S3 Buckets & create Presigned URLs)
+   - `AmazonSQSFullAccess` (Permission to send/receive messages on SQS Queue)
+   - `AmazonSESFullAccess` (Permission to send notification emails via SES)
+5. Click **Next**.
+6. **Step 3 (Name, review, and create)**:
+   - Enter **Role name**: `student-portal-lambda`.
+   - Review permissions and click **Create role**.
+7. Copy and save the created **Role ARN**:
+   ```text
+   arn:aws:iam::147997148454:role/student-portal-lambda
+   ```
 
----
+![AWS IAM Roles List Console UI](/images/5-Workshop/5.4-Backend-apigateway/iam_roles.png)
 
-### Step 2: Deploy Lambda Functions
-
-The backend consists of 21 separate Lambda functions, each handling dedicated business APIs (CRUD operations for students, teachers, grades, presigned URL generation, and the background email notification worker).
-
-To deploy all functions to AWS Lambda, export the configuration environment variables and run the deployment script:
-
-```bash
-# 1. Configure deployment environment variables
-export LAMBDA_ROLE_ARN="arn:aws:iam::<ACCOUNT_ID>:role/student-portal-lambda"
-export DOCUMENTS_BUCKET="student-documents-<yourname>"
-export NOTIFICATION_QUEUE_URL="https://sqs.us-east-1.amazonaws.com/<ACCOUNT_ID>/student-notifications"
-export FROM_EMAIL="your-verified-email@example.com"
-
-# 2. Run the packaging and deployment script
-bash scripts/deploy-lambdas.sh us-east-1
-```
-
-> [!TIP]
-> Ensure the email configured in `FROM_EMAIL` has been successfully verified in **Amazon SES** (under Sandbox mode, both sender and recipient email addresses must be verified to prevent delivery failures).
+![AWS IAM Users List Console UI](/images/5-Workshop/5.4-Backend-apigateway/iam_users.png)
 
 ---
 
-### Step 3: Deploy and Configure API Gateway
+### Step 2: Create & Configure AWS Lambda Functions via AWS Web Console
 
-To allow the Frontend application to interact with the Lambda functions, we need a REST API Gateway to map HTTP Endpoints to their corresponding Lambda functions and enforce security.
+The Student Management Portal utilizes 33 Lambda functions handling separate business workflows (CRUD operations for students, teachers, classes, grades, material uploads, and background email workers).
 
-Run the API Gateway deployment script:
-```bash
-# Set the Cognito User Pool ID saved from the previous step
-export USER_POOL_ID="us-east-1_xxxxxxxxx"
+#### 📌 Step-by-Step AWS Web Console Guide:
+1. Log in to the [AWS Lambda Console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions).
+2. Click **Create function**.
+3. Select **Author from scratch**.
+4. Enter **Function name**: `getStudents` *(Repeat for remaining functions like `createStudent`, `docUploadUrl`, `sendEmailWorker`, etc.)*.
+5. Select **Runtime**: `Node.js 18.x` (or `Node.js 20.x`).
+6. Under **Change default execution role**:
+   - Select **Use an existing role**.
+   - Under **Existing role**, select `student-portal-lambda`.
+7. Click **Create function**.
+8. **Configure Environment Variables**:
+   - Navigate to the **Configuration** tab → Select **Environment variables** in the left menu.
+   - Click **Edit** → Add the following Key/Value environment variables:
+     - `DOCUMENTS_BUCKET`: `student-documents-147997148454`
+     - `NOTIFICATION_QUEUE_URL`: `https://sqs.us-east-1.amazonaws.com/147997148454/student-notifications`
+     - `USER_POOL_ID`: `us-east-1_7SwNQ0qYm`
+   - Click **Save**.
+9. Under the **Code** tab, upload your function's `.zip` source code bundle and click **Deploy**.
 
-# Execute the API gateway builder script
-bash scripts/deploy-apigateway.sh us-east-1
-```
+![Create AWS Lambda Function on AWS Console UI](/images/5-Workshop/5.4-Backend-apigateway/aws_console_lambda_create.png)
 
-This script automates the creation of the following API Gateway resources:
-1. Creates a REST API named `student-portal-api`.
-2. Creates a **Cognito Authorizer** linked with your User Pool.
-3. Sets up path resources and methods:
-   * `/students`, `/students/{id}` -> Maps to student CRUD Lambda functions.
-   * `/teachers`, `/teachers/{id}` -> Maps to teacher CRUD Lambda functions.
-   * `/grades`, `/grades/{id}` -> Maps to grade CRUD Lambda functions.
-   * `/materials/upload-url`, `/materials/metadata` -> Maps to learning material Lambda functions.
-   * `/documents/upload-url`, `/documents/metadata` -> Maps to student document Lambda functions.
-4. Applies the Cognito Authorizer to all methods requiring authentication (e.g., POST, PUT, DELETE).
-5. Enables **CORS** (Cross-Origin Resource Sharing) on all endpoints to permit requests from browser-based clients.
-6. Deploys the API to a stage named `prod`.
+![AWS Lambda Functions List Console UI](/images/5-Workshop/5.4-Backend-apigateway/lambda.jpeg)
 
-When complete, copy the **Invoke URL** displayed in the terminal:
-```text
-https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod
-```
-This is the API Gateway endpoint that your React Frontend will use to make backend requests.
+---
+
+### Step 3: Deploy & Configure REST API Gateway via AWS Web Console
+
+To allow the Frontend application to interact securely with Lambda functions, we set up **Amazon API Gateway** as an API routing gateway integrated with **Cognito Authorizer**.
+
+#### 📌 Step-by-Step AWS Web Console Guide:
+
+##### 1. Initialize REST API
+1. Log in to the [Amazon API Gateway Console](https://us-east-1.console.aws.amazon.com/apigateway/main/apis?region=us-east-1).
+2. Click **Create API** → Under **REST API**, click **Build**.
+3. Select **New API**.
+4. Enter **API name**: `student-portal-api` *(REST API ID: `9k9i3ukwdh`)*.
+5. Select **Endpoint Type**: `Regional`. Click **Create API**.
+
+![Initialize REST API on AWS Console UI](/images/5-Workshop/5.4-Backend-apigateway/create_rest_api.jpeg)
+
+##### 2. Create Security Cognito Authorizer
+1. In the left menu of `student-portal-api`, select **Authorizers**.
+2. Click **Create new authorizer**.
+3. Enter **Authorizer name**: `CognitoAuthorizer`.
+4. Select **Type**: `Cognito`.
+5. Under **Cognito User Pool**, select `student-portal-user-pool` (`us-east-1_7SwNQ0qYm`).
+6. Enter **Token Source**: `Authorization`. Click **Create authorizer**.
+
+![Create Security Cognito Authorizer](/images/5-Workshop/5.4-Backend-apigateway/create_authorizer.jpeg)
+
+##### 3. Create Resources & HTTP Methods
+1. In the left menu, click **Resources**.
+2. Click **Actions** → Select **Create Resource**:
+   - Enter Resource Name: `students` → Resource Path: `/students`. Click **Create Resource**.
+3. Select the created `/students` resource → Click **Actions** → Select **Create Method**:
+   - Create **GET** method: Select Integration type `Lambda Function` → Select Lambda function `getStudents` → Click **Save**.
+   - Create **POST** method: Select Integration type `Lambda Function` → Select Lambda function `createStudent` → Click **Save**.
+4. Repeat for other Resources: `/teachers`, `/grades`, `/documents`, `/materials`.
+5. **Enable Cognito Security**: Select a method (e.g. POST `/students`) → Click **Method Request** → Under **Authorization**, change `NONE` to `CognitoAuthorizer` → Click the checkmark to save.
+
+![Create Resources & HTTP Methods on AWS Console UI](/images/5-Workshop/5.4-Backend-apigateway/create_resource.jpeg)
+
+##### 4. Enable CORS & Deploy API Stage `prod`
+1. Select root resource `/` or child resources → Click **Actions** → Select **Enable CORS**.
+2. Keep default settings and click **Enable CORS and replace existing CORS headers**.
+3. Click **Actions** → Select **Deploy API**.
+4. Under **Deployment stage**, select **[New Stage]** → Enter **Stage name**: `prod`. Click **Deploy**.
+5. Copy the **Invoke URL** displayed on the Stage Overview page:
+   ```text
+   https://9k9i3ukwdh.execute-api.us-east-1.amazonaws.com/prod
+   ```
+
+![Amazon API Gateway & Lambda AWS Console UI](/images/5-Workshop/5.4-Backend-apigateway/apigateway_lambda_console.png)
