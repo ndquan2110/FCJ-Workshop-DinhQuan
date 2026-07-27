@@ -3,7 +3,7 @@ title: "Infrastructure & Database"
 date: 2024-01-01
 weight: 4
 chapter: false
-pre: " <b> 5. </b> "
+pre: " <b> 5.3. </b> "
 ---
 
 In this section, we will manually create and configure the core backend infrastructure services on the **AWS Management Console**: **DynamoDB**, **S3 Bucket**, **SQS Queue**, and **Amazon Cognito**.
