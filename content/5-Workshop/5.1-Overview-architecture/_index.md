@@ -19,7 +19,7 @@ The system serves three user groups:
 
 ### Overview
 #### Live Product URL & Demo Accounts
-* **Live Web Product URL (CloudFront CDN):**[https://d3th0yl82lu593.cloudfront.net/]
+* **Live Web Product URL (CloudFront CDN):** <https://d3th0yl82lu593.cloudfront.net/>
 #### Test Accounts & Roles:
  Role Group         | Login Email       | Password   | Authorized Features
   --------------------|-----------------------|-------------|-----------------------
