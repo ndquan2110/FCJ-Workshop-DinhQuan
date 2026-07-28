@@ -6,9 +6,9 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+In this worklog, I present the learning and practice process during the First Cloud Journey internship program. Since many labs were completed quickly in a single day, the daily notes have been reorganized into a more balanced 12-week report while still keeping the original learning content intact.
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+The worklog content includes AWS identity and access management, networking, compute, database, monitoring, cost management, security, automation, storage, container deployment, serverless messaging, the development phase of a student management microservice web app, AWS deployment, CloudFormation, troubleshooting, and the final report summary.
 
 **Week 1:** [Getting started with AWS, IAM, VPC, and EC2](1.1-week1/)
 
